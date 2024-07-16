@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Book Management System</title>
+
+<link rel="stylesheet" th:href="@{/resources/css/bootstrap.min.css}" />
+<script th:src="@{/resources/js/bootstrap.bundle.min.js}"></script>
+
+</head>
+<body>
+	<div class="container my-4">
+		<h2>Book Shop Management</h2>
+		<div class="row mt-4">
+			<div class="col-9">
+				<div class="card ">
+					<div class="card-header">BookList</div>
+					<div class="card-body">
+						<table class="table table-stripped">
+							<tr>
+								<th th:text="Id"></th>
+								<th th:text="Title"></th>
+								<th th:text="Author"></th>
+								<th th:text="Category"></th>
+								<th th:text="Price"></th>
+								<th th:text="Remark"></th>
+							</tr>
+							<tr th:each="book : ${list}">
+								<td th:text="${book.id}"></td>
+								<td><a th:href="@{/book/edit(id=${book.id})}"
+									th:text="${book.title}"></a></td>
+								<td th:text="${book.author}"></td>
+								<td th:text="${book.category.name}"></td>
+								<td th:text="${book.price}"></td>
+								<td th:text="${book.remark}"></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div th:replace="~{fragments/left-bar :: #left-bar}"></div>
+		</div>
+	</div>
+</body>
+</html>

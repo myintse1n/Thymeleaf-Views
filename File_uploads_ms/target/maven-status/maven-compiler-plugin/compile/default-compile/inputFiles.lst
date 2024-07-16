@@ -1,0 +1,12 @@
+/home/msseeker/thymeleafViews/File_uploads_ms/src/main/java/com/ms/book/config/ApplicationLoader.java
+/home/msseeker/thymeleafViews/File_uploads_ms/src/main/java/com/ms/book/config/DatabaseConfig.java
+/home/msseeker/thymeleafViews/File_uploads_ms/src/main/java/com/ms/book/config/WebMvcConfig.java
+/home/msseeker/thymeleafViews/File_uploads_ms/src/main/java/com/ms/book/mvc/controller/HomeController.java
+/home/msseeker/thymeleafViews/File_uploads_ms/src/main/java/com/ms/book/mvc/controller/advices/CategoryControllerAdvice.java
+/home/msseeker/thymeleafViews/File_uploads_ms/src/main/java/com/ms/book/mvc/formatter/CategoryFormatter.java
+/home/msseeker/thymeleafViews/File_uploads_ms/src/main/java/com/ms/book/root/entity/Book.java
+/home/msseeker/thymeleafViews/File_uploads_ms/src/main/java/com/ms/book/root/entity/Category.java
+/home/msseeker/thymeleafViews/File_uploads_ms/src/main/java/com/ms/book/root/repo/BookRepo.java
+/home/msseeker/thymeleafViews/File_uploads_ms/src/main/java/com/ms/book/root/repo/CategoryRepo.java
+/home/msseeker/thymeleafViews/File_uploads_ms/src/main/java/com/ms/book/root/service/BookService.java
+/home/msseeker/thymeleafViews/File_uploads_ms/src/main/java/com/ms/book/root/service/CategoryService.java
