@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.container .odd_color {
+	background-color: gray !important;
+}
+
+.first_color {
+	border-top-style: solid;
+	border-top-color: red;
+	border-top-width: 2px;
+}
+
+.last_color {
+	border-bottom-style: solid;
+	border-bottom-color:red;
+	border-bottom-width: 2px;
+}

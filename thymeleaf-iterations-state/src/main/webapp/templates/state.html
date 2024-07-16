@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>State</title>
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/resources/vendors/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/resources/custom/css/state.css}" />
+<script th:src="@{/resources/vendors/js/bootstrap.bundle.min.js}"></script>
+
+
+</head>
+
+<body>
+	<div class="container mt-4">
+		<h2>States of Myanmar</h2>
+
+		<div th:switch="${size}">
+			<div class="alert alert-info" th:case="0">
+				<p>There is no data. Please upload state data.</p>
+				<a href="#" id="uploadBtn" class="btn btn-primary">Upload</a>
+				
+				<script th:src="@{/resources/custom/js/upload.js}"></script>
+				<form enctype="multipart/form-data"  th:action="@{/home}" id="uploadForm" class="d-none" method="post">
+					<input type="file" id="uploadInput" name="file" />
+				</form>
+				
+			</div>
+			<table th:case="*" class="table table-stripped mt-3">
+				<tr>
+					<th th:text="Id"></th>
+					<th th:text="Name"></th>
+					<th th:text="Region"></th>
+					<th th:text="Capital"></th>
+					<th th:text="Status"></th>
+				</tr>
+				<tr th:each="item, itemStatus : ${list}" th:object="${item }"
+					th:class="${itemStatus.odd} ? odd_color"
+					th:classappend="${itemStatus.last } ? last_color :(${itemStatus.first} ? first_color)">
+					<td th:text="*{id}"></td>
+					<td th:text="*{name}"></td>
+					<td th:text="*{region}"></td>
+					<td th:text="*{capital}"></td>
+					<td th:text="|${itemStatus.count} / ${itemStatus.size}|"></td>
+				</tr>
+			</table>
+		</div>
+
+
+
+
+
+	</div>
+</body>
+</html>
