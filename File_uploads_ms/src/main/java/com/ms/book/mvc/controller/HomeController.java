@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.ms.book.root.entity.Book;
 import com.ms.book.root.service.BookService;
 @Controller
-@RequestMapping(value = {"/home","/book"})
+@RequestMapping(value = {"home","book"})
 public class HomeController {
 	
 	@Autowired
