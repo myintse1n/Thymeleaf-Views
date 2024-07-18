@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Internationalization</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-danger bg-danger">
+		<div class="container">
+			<span class="navbar-brand" th:text="#{title}">App Title</span>
+			<ul class="navbar-nav">
+				<li class="nav-item dropdown" ><a href=""
+					class="nav-link dropdown-toggle" data-bs-toggle="dropdown" th:text="#{|lang.${#locale}|}"></a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" th:classappend="${#strings.equals('en_US',#locale) ? 'active' : ''}" th:href="@{''(lang=en_US)}" th:text="#{lang.en}"></a></li> 
+						<li><a class="dropdown-item" th:classappend="${#strings.equals('ja_JP',#locale) ? 'active' : ''}" th:href="@{''(lang=ja_JP)}" th:text="#{lang.ja}"></a></li>				
+						<li><a class="dropdown-item" th:classappend="${#strings.equals('my_MM',#locale) ? 'active' : ''}" th:href="@{''(lang=my_MM)}" th:text="#{lang.my}"></a></li>
+				</ul>
+				</li>				
+			</ul>
+		</div>
+	</nav>
+	<div class="container mt-4">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th th:text="#{label.name}">Name</th>
+					<th th:text="#{label.value}">Value</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td th:text="#{label.locale}">Name</td>
+					<td th:text="${#locale}">Locale</td>
+				</tr>
+				<tr>
+					<td th:text="#{label.language}">Name</td>
+					<td th:text="#{|lang.${#locale}|}">Locale</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
