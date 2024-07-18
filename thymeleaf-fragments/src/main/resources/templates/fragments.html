@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div data-th-fragment="onePieceCrew(crewMember)">
+
+		<div class="card">
+			<img th:src="@{|/image/${crewMember.imageLoation}|}"
+				alt="OnePiece Crew Member Logo" class="card-img-top card-item-image" />
+			<div class="card-body" th:text="${crewMember.name}">My Product1</div>
+		</div>
+	</div>
+</body>
+</html>

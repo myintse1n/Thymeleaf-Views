@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{ layout ( title='Thymeleaf' ,content = ~{:: #content}, page = 'home' ) }">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+	<div id="content" class="container mt-4">
+		<h2>Using Fragments</h2>
+		
+		<div class="row row-cols-3 mt-5 gy-4">
+			<div th:each="crewMem : ${crewMemberList}">
+				<div data-th-replace="~{fragments :: onePieceCrew(${crewMem})}"></div>
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>
