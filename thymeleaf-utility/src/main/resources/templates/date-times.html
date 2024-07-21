@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{ /fragments/layout :: common( 'Thymeleaf Date Times', ~{:: main} , 'date-times' ) }">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<main>
+		<span class="mt-5">This is Date &amp; Times for thymeleaf
+			utility</span>
+
+		<div class="row mt-4 " th:with="pattern = 'yyyy-mm-dd hh:mm a' ">
+			<div class="col-4">
+				<div class="card" th:with="date = ${ #dates.createNow() }">
+					<div class="card-header">Java Utils Dates</div>
+					<div class="card-body">
+						<span th:text="${#dates.format(date, pattern)}"></span>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="card" th:with="calendar = ${ #calendars.createNow()}">
+					<div class="card-header">Java Utils Calendar</div>
+					<div class="card-body">
+						<span th:text="${#calendars.format(calendar, pattern)}"></span>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="card" th:with="temporals = ${#temporals.createNow()}">
+					<div class="card-header">Java Utils Temporals</div>
+					<div class="card-body">
+						<span th:text="${ #temporals.format(temporals, pattern)}"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

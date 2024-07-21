@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{ /fragments/layout :: common( 'Thymeleaf Data Types', ~{:: main} , 'basic,objects' ) }">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<main>
+		<span class="mt-5">This is objects  for thymeleaf basic data type utility</span>
+
+		<table class="table table-striped table-light table-bordered mt-5">
+			<thead>
+				<tr>
+					<th>About</th>
+					<th>Expression</th>
+					<th>Output</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>NullSafe call with Not Null Value</td>
+					<td>${#objects.nullSafe(notNullValue,'This is null value')}</td>
+					<td>[[${#objects.nullSafe(notNullValue,'This is null
+						value')}]]</td>
+				</tr>
+				<tr>
+					<td>NullSafe call with Null Value</td>
+					<td>${#objects.nullSafe(nullValue,'This is null value')}</td>
+					<td>[[${#objects.nullSafe(nullValue,'This is null value')}]]</td>
+				</tr>
+				<tr>
+					<td>NullSafe call with Elvis operator</td>
+					<td>${nullValue} ?: 'This is null value' </td>
+					<td>[[${nullValue} ?: 'This is null value']]</td>
+				</tr>
+				<tr>
+					<td>NullSafe call with Elvis operator</td>
+					<td>${notNullValue} ?: 'This is null value' </td>
+					<td>[[${notNullValue} ?: 'This is null value']]</td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
+</body>
+</html>

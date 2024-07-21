@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		th:replace="~{ /fragments/layout :: common( 'Thymeleaf Utility', ~{:: main} , 'basic,bools' ) }">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<main>
+		<span class="mt-5">This is bools  for thymeleaf basic data type utility</span>
+		
+		<table class="table mt-4">
+			<thead>
+				<tr>
+					<th>About</th>
+					<th>Expression</th>
+					<th>Output</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Array And</td>
+					<td>${#bools.arrayAnd( {true,true} )}</td>
+					<td>[[${#bools.arrayAnd( {true,true} )}]]</td>
+				</tr>
+				<tr>
+					<td>Array And</td>
+					<td>${#bools.arrayAnd( {true,false} )}</td>
+					<td>[[${#bools.arrayAnd( {true,false} )}]]</td>
+				</tr>
+				<tr>
+					<td>Array Or</td>
+					<td>${#bools.arrayOr( {true,false} )}</td>
+					<td>[[${#bools.arrayOr( {true,false} )}]]</td>
+				</tr>
+				<tr>
+					<td>Array Or</td>
+					<td>${#bools.arrayOr( {false,false} )}</td>
+					<td>[[${#bools.arrayOr ( {false,false} )}]]</td>
+				</tr>
+				<tr>
+					<td>Null Object</td>
+					<td>${ #bools.isTrue(null) }</td>
+					<td>[[${ #bools.isTrue(null) }]]</td>
+				</tr>
+				<tr>
+					<td>Null Object</td>
+					<td>${ #bools.isFalse(null) }</td>
+					<td>[[${ #bools.isFalse(null) }]]</td>
+				</tr>
+				<tr>
+					<td>Number greater eq 0</td>
+					<td>${ #bools.isTrue(0)}</td>
+					<td>[[${ #bools.isTrue(0) }]]</td>
+				</tr>
+				<tr>
+					<td>String with exception</td>
+					<td>${ #bools.arrayOr( {'no','No','Off','off','false','False'} ) }</td>
+					<td>[[${ #bools.arrayOr( {'no','No','Off','off','false','False'} ) }]]</td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" data-th-replace="~{/fragments/layout :: common('Other Utils', ~{:: main}, 'others')}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<main data-th-with="uri='http://www.hello.demo/path;#data=10/query?a=1 1'">
+		
+		<table class="table">
+			<tr>
+				<th>Method</th>
+				<th>Expression</th>
+				<th>Output</th>
+			</tr>
+			
+			<tr>
+				<td>Escape Path</td>
+				<td>${#uris.escapePath(uri)}</td>
+				<td data-th-text="${#uris.escapePath(uri)}"></td>
+			</tr>
+			
+			<tr>
+				<td>Escape Path Segment</td>
+				<td>${#uris.escapePathSegment(uri)}</td>
+				<td data-th-text="${#uris.escapePathSegment(uri)}"></td>
+			</tr>
+			
+			<tr>
+				<td>Escape Fragment Id</td>
+				<td>${#uris.escapeFragmentId(uri)}</td>
+				<td data-th-text="${#uris.escapeFragmentId(uri)}"></td>
+			</tr>
+
+			<tr>
+				<td>Escape Query Param</td>
+				<td>${#uris.escapeQueryParam(uri)}</td>
+				<td data-th-text="${#uris.escapeQueryParam(uri)}"></td>
+			</tr>
+
+		</table>	
+		
+		<div class="card mt-4">
+			<div class="card-body">
+				<h4 class="card-title">Using IDS</h4>
+				
+				<div class="d-flex">
+					<div class="me-2 form-check form-check-inline" th:each="item : ${subjects}" >
+						<input th:id="${#ids.seq('subject')}" type="checkbox"  />
+						<label th:for="${#ids.prev('subject')}" class="form-check-label" th:text="${item}"></label>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="card mt-4">
+			<div class="card-body">
+				<h4 class="card-title">Base Expression Objects</h4>
+				
+			
+				
+				<p th:text="${#locale}"></p>
+			</div>
+		</div>
+	
+	</main>
+
+</body>
+</html>
